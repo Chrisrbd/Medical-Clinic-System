@@ -31,7 +31,7 @@ public class Treatment {
     public Patient getPatient() {
         return patient;
     }
-
+    
     //setters
     public void setDate(Date date) {
         this.date = date;
@@ -49,3 +49,4 @@ public class Treatment {
         this.patient = patient;
     }
 }
+ 
