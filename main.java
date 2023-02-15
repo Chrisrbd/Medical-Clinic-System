@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class main {
+    public static void main( String[] args) {
         
         List<Doctor> doctorList = new ArrayList<>(); // Create a list to hold doctors
         List<Patient> patientList = new ArrayList<>(); // Create a list to hold patients
