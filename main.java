@@ -38,25 +38,64 @@ public class Main {
             System.out.println("\nPlease enter your role:");
             System.out.println("1) I am a Patient");
             System.out.println("2) I am a Doctor");
-            System.out.println("3) I am the Receptionist ");
-            System.out.println("4) Exit ");
+            System.out.println("3) I am the Receptionist");
+            System.out.println("4) Exit");
             System.out.print("\nYour choice: ");
-            numAffichage = sc.nextInt(); 
+            numAffichage = sc.nextInt();
             switch (numAffichage) {
-                case 1 : {
-                    System.out.println("What do you want to do ?");
+                case 1 : { // Patient
+                    System.out.println("\nWhat do you want to do ?");
                     System.out.println("1) Change my personal informations");
+                    System.out.println("2) Make an appointment with a doctor");
+                    System.out.println("3) Manage your appointment");
+                    System.out.println("4) Return to the main menu");
+                    System.out.print("\nYour choice: ");
+                    numAffichage = sc.nextInt();
+                    switch(numAffichage){
+                        case 1 : {
+                            
+                        }
+                        case 2 : {
+                            
+                        }
+                        case 3 : {
+                            
+                        }
+                        case 4 : {
+                            return;
+                        }
+                    }
                     break;
                 }
-                case 2 : {
-                    System.out.println("What do you want to do ?");
-                    System.out.println(":p");
+                case 2 : { // Doctor
+                    System.out.println("\nWhat do you want to do ?");
+                    System.out.println("1) Change my personal informations");
+                    System.out.println("2) Make an appointment with a doctor");
+                    System.out.println("3) Manage your appointment");
+                    System.out.println("4) Return to the main menu");
+                    System.out.print("\nYour choice: ");
+                    numAffichage = sc.nextInt();
+                    switch(numAffichage){
+                        case 1 : {
+                            
+                        }
+                        case 2 : {
+                            
+                        }
+                        case 3 : {
+                            
+                        }
+                        case 4 : {
+                            return;
+                        }
+                    }
                     break;
                 }
-                case 3 : {
+                case 3 : { // Receptionist
                     System.out.println("What do you want to do ?");
                     System.out.println("1) List all doctors");
                     System.out.println("2) List all patients");
+                    System.out.println("4) Return to the main menu");
                     numAffichage = sc.nextInt();
                     switch (numAffichage) {
                         case 1 : {        
@@ -77,6 +116,9 @@ public class Main {
                             System.out.println("****************************************************");
                             break;
                         }
+                        case 4 : {
+                            return;
+                        }
                     }
                     
                 }
@@ -86,8 +128,8 @@ public class Main {
                     break;
                 }
             }
-            sc.close();
         }
+
         
     }
 }
