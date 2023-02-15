@@ -1,17 +1,56 @@
-import java.util.zip.DataFormatException;
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class Person {
+
+    //attributes
+    private String id;
     private String name;
-    private Date birthdate;
+    private LocalDate dateOfBirth;
+    private String address;
+    private String phoneNumber;
 
-
-    public Person(String name, Date birthdate){
+    //constructors
+    public Person(String id, String name, LocalDate dateOfBirth, String address, String phoneNumber) {
+        this.id = id;
         this.name = name;
-        this.birthdate = birthdate;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
-    
+    //getters
+    public String getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    //setters
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    //methods
+
 
 
 }
