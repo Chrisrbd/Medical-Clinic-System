@@ -3,15 +3,13 @@ import java.time.LocalDate;
 public abstract class Person {
 
     //attributes
-    private String id;
     private String name;
     private LocalDate dateOfBirth;
     private String address;
     private String phoneNumber;
 
     //constructors
-    public Person(String id, String name, LocalDate dateOfBirth, String address, String phoneNumber) {
-        this.id = id;
+    public Person(String name, LocalDate dateOfBirth, String address, String phoneNumber) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
@@ -19,9 +17,7 @@ public abstract class Person {
     }
 
     //getters
-    public String getId() {
-        return id;
-    }
+
     public String getName() {
         return name;
     }
@@ -36,6 +32,7 @@ public abstract class Person {
     }
 
     //setters
+
     public void setName(String name) {
         this.name = name;
     }
