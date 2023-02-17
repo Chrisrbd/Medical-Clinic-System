@@ -4,19 +4,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    
     public static void main(String[] args) {
         
         ArrayList <Doctor> doctorList = new ArrayList<>();
         ArrayList <Patient> patientList = new ArrayList<>();
-
+        
         // Create some doctors
-        Doctor doctor1 = new Doctor("D1", "John Smith", LocalDate.of(1975, 5, 12), "12 rue de chez elle", "025055432", "Cardiology");
-        Doctor doctor2 = new Doctor("D2","Jane Doe", LocalDate.of(1982, 9, 25), "12 rue de chez lui", "05765725", "Pediatrics");
+        Doctor doctor1 = new Doctor("Jhon Smith", LocalDate.of(1975, 5, 12), "12 rue de chez elle", "025055432", "Cardiology");
+        Doctor doctor2 = new Doctor("Jane Doe", LocalDate.of(1982, 9, 25), "12 rue de chez lui", "05765725", "Pediatrics");
         
         // Create some patients
-        Patient patient1 = new Patient("P1","John Doe", LocalDate.of(1985, 6, 10), "123 Main St.", "555-1234", "ABC Insurance");
-        Patient patient2 = new Patient("P2","Jane Smith", LocalDate.of(1990, 3, 15), "456 Oak Ave.", "555-5678", "XYZ Insurance");
-        Patient patient3 = new Patient("P3","Bob Johnson", LocalDate.of(1975, 9, 1), "789 Elm St.", "555-9012", "DEF Insurance");
+        Patient patient1 = new Patient("John Doe", LocalDate.of(1985, 6, 10), "123 Main St.", "555-1234", "ABC Insurance");
+        Patient patient2 = new Patient("Jane Smith", LocalDate.of(1990, 3, 15), "456 Oak Ave.", "555-5678", "XYZ Insurance");
+        Patient patient3 = new Patient("Bob Johnson", LocalDate.of(1975, 9, 1), "789 Elm St.", "555-9012", "DEF Insurance");
         
         // Add doctors to the list
         doctorList.add(doctor1);
@@ -40,10 +41,18 @@ public class Main {
                 System.out.println("2) I am a Doctor");
                 System.out.println("3) I am the Receptionist");
                 System.out.print("\nYour choice: ");
+                String[] registerInfo = new String[5];
                 numMenu = input.nextInt();
                 switch (numMenu) {
                     case 1 :{ // Register as a patient
-
+                        System.out.println("Write your name, date of birth, adress, phone number and insurance company");
+                        for(int i = 0; i < 5; i++){
+                            Patient patient =
+                        }
+                        for(int i = 0; i < patientList.size(); i++){
+                            
+                        }
+                        Patient patientX = new Patient(null, null, null, null, null, null);
                         break;
                     }
                     case 2 :{ // Register as a doctor
@@ -59,6 +68,9 @@ public class Main {
             else if (registered == 'y'){
                 System.out.print("Enter your ID: ");
                 String ID = input.next();
+                for(){
+                    
+                }
                 char firstLetterOfID = ID.charAt(0);
                 switch(firstLetterOfID){
                     case 'P':{ // Patient
@@ -73,12 +85,15 @@ public class Main {
                         switch(numMenu){
                             case 1 : {
                                 
+                                break;
                             }
                             case 2 : {
-                                
+
+                                break;
                             }
                             case 3 : {
                                 
+                                break;
                             }
                             case 4 : {
                                 return;
@@ -97,13 +112,13 @@ public class Main {
                         numMenu = input.nextInt();
                         switch(numMenu){
                             case 1 : {
-                                
+                                break;
                             }
                             case 2 : {
-                                
+                                break;
                             }
                             case 3 : {
-                                
+                                break;
                             }
                             case 4 : {
                                 return;
@@ -140,7 +155,7 @@ public class Main {
                                 return;
                             }
                         }
-                        
+                        break;
                     }                
                 }
             }
