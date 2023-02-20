@@ -1,82 +1,45 @@
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    
     public static void main(String[] args) {
         
-        ArrayList <Doctor> doctorList = new ArrayList<>();
-        ArrayList <Patient> patientList = new ArrayList<>();
+    
         
-        // Create some doctors
-        Doctor doctor1 = new Doctor("Jhon Smith", LocalDate.of(1975, 5, 12), "12 rue de chez elle", "025055432", "Cardiology");
-        Doctor doctor2 = new Doctor("Jane Doe", LocalDate.of(1982, 9, 25), "12 rue de chez lui", "05765725", "Pediatrics");
-        
-        // Create some patients
-        Patient patient1 = new Patient("John Doe", LocalDate.of(1985, 6, 10), "123 Main St.", "555-1234", "ABC Insurance");
-        Patient patient2 = new Patient("Jane Smith", LocalDate.of(1990, 3, 15), "456 Oak Ave.", "555-5678", "XYZ Insurance");
-        Patient patient3 = new Patient("Bob Johnson", LocalDate.of(1975, 9, 1), "789 Elm St.", "555-9012", "DEF Insurance");
-        
-        // Add doctors to the list
-        doctorList.add(doctor1);
-        doctorList.add(doctor2);
-
-        // Add patients to the list
-        patientList.add(patient1);
-        patientList.add(patient2);
-        patientList.add(patient3);
-
         //final part
         int numMenu; 
         Scanner input = new Scanner(System.in);
         boolean exit = false;
         while(exit != true){
-            System.out.println("\nWelcome to our Medical Clinic !");
-            System.out.println("\nAre you registered with us ? y/n");
-            char registered = input.next().charAt(0);
-            if(registered == 'n'){
-                System.out.println("\n1) I am a Patient");
-                System.out.println("2) I am a Doctor");
-                System.out.println("3) I am the Receptionist");
+            try{
+                System.out.println("\nWelcome to our Medical Clinic !");
+                System.out.println("\n1) Sign up");
+                System.out.println("2) Sign in");
+                System.out.println("3) Exit");
                 System.out.print("\nYour choice: ");
-                String[] registerInfo = new String[5];
                 numMenu = input.nextInt();
-                switch (numMenu) {
-                    case 1 :{ // Register as a patient
-                        System.out.println("Write your name, date of birth, adress, phone number and insurance company");
-                        for(int i = 0; i < 5; i++){
-                            Patient patient =
-                        }
-                        for(int i = 0; i < patientList.size(); i++){
-                            
-                        }
-                        Patient patientX = new Patient(null, null, null, null, null, null);
-                        break;
-                    }
-                    case 2 :{ // Register as a doctor
-
-                        break;
-                    }
-                    case 3 :{ // Register as the receptionist
-
-                        break;
-                    }
+                while (numMenu != 1 && numMenu != 2 && numMenu != 3) {
+                    System.out.println("Invalid choice. Please enter 1, 2 or 3.");
+                    System.out.print("\nYour choice: ");
+                    numMenu = input.nextInt();
                 }
             }
-            else if (registered == 'y'){
-                System.out.print("Enter your ID: ");
-                String ID = input.next();
-                for(){
-                    
-                }
-                char firstLetterOfID = ID.charAt(0);
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                break;
+            }
+            
+            if(numMenu == 1){ // Sign up
+                Registration.register();
+            }
+            else if (numMenu == 2){ // Sign in                
+
+                IDVerification.IDVerify();
+                char firstLetterOfID = IDVerification.getFirstLetterOfIDSearch();
+                /* 
                 switch(firstLetterOfID){
                     case 'P':{ // Patient
-                        System.out.println("\nHello "+ID+" !"); 
                         System.out.println("What do you want to do ?");
-                        System.out.println("\n1) Change my personal informations");
+                        System.out.println("\n1) Change my personal information");
                         System.out.println("2) Make an appointment with a doctor");
                         System.out.println("3) Manage your appointment");
                         System.out.println("4) Return to the main menu");
@@ -84,15 +47,15 @@ public class Main {
                         numMenu = input.nextInt();
                         switch(numMenu){
                             case 1 : {
-                                
+                                System.out.println("Change my personal information");
                                 break;
                             }
                             case 2 : {
-
+                                System.out.println("Make an appointment with a doctor");
                                 break;
                             }
                             case 3 : {
-                                
+                                System.out.println("Manage your appointment");
                                 break;
                             }
                             case 4 : {
@@ -102,9 +65,8 @@ public class Main {
                         break;
                     }
                     case 'D':{ // Doctor
-                        System.out.println("\nHello "+ID+" !"); 
                         System.out.println("What do you want to do ?");
-                        System.out.println("\n1) Change my personal informations");
+                        System.out.println("\n1) Change my personal information");
                         System.out.println("2) Make an appointment with a doctor");
                         System.out.println("3) Manage your appointment");
                         System.out.println("4) Return to the main menu");
@@ -112,12 +74,15 @@ public class Main {
                         numMenu = input.nextInt();
                         switch(numMenu){
                             case 1 : {
+                                System.out.println("Change my personal information");
                                 break;
                             }
                             case 2 : {
+                                System.out.println("Make an appointment with a doctor");
                                 break;
                             }
                             case 3 : {
+                                System.out.println("Manage your appointment");
                                 break;
                             }
                             case 4 : {
@@ -136,18 +101,14 @@ public class Main {
                             case 1 : {        
                                 // Print out the list of Doctor objects
                                 System.out.println("Here are all the doctors :");
-                                for (Doctor doctor : doctorList) {
-                                    System.out.println(doctor+"\n");
-                                }
+                                
                                 System.out.println("****************************************************");
                                 break;
                             }
                             case 2 : {        
                                 // Print out the list of Patient objects
                                 System.out.println("Here are all the patients :");
-                                for (Patient patient : patientList) {
-                                    System.out.println(patient+"\n");
-                                }
+
                                 System.out.println("****************************************************");
                                 break;
                             }
@@ -158,12 +119,17 @@ public class Main {
                         break;
                     }                
                 }
+                */
+            
             }
-
-            else {
-                System.out.println("Please enter a valid answer");
-                return;
+            else if (numMenu == 3){ // Exit
+                System.out.println("\nThank you for using our Medical Clinic System. Goodbye !\n");
+                break;
             } 
-        }
-    }
-}
+            
+        } // end of while
+        input.close();
+    } // end of main
+} // end of Main class
+
+
