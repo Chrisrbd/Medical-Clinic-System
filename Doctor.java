@@ -30,11 +30,11 @@ public class Doctor extends Person {
     @Override
     public String toString() {
         return
-        "name: " + getName() +
+        "id: " + getID() +
+        "\nname: " + getName() +
         "\ndateOfBirth: " + getDateOfBirth() +
         "\naddress: " + getAddress() +
         "\nphoneNumber: " + getPhoneNumber() +
-        "\nspecialty: " + specialty
-        ;
+        "\nspecialty: " + specialty;
     }
   }
