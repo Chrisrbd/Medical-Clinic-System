@@ -45,8 +45,9 @@ public class Main {
                             System.out.println("What do you want to do ?");
                             System.out.println("\n1) Change my personal information");
                             System.out.println("2) Make an appointment with a doctor");
-                            System.out.println("3) Manage your appointment");
-                            System.out.println("4) Exit");
+                            System.out.println("3) Modify an appointment");
+                            System.out.println("4) Cancel an appointment");
+                            System.out.println("5) Exit");
                             System.out.print("\nYour choice: ");
                             numMenu = input.nextInt();
                             switch(numMenu){
@@ -56,14 +57,19 @@ public class Main {
                                     break;
                                 }
                                 case 2 : {
-                                    System.out.println("Make an appointment with a doctor");
+                                    Appointment.addAppointment();
                                     break;
                                 }
                                 case 3 : {
-                                    System.out.println("Manage your appointment");
+                                    System.out.println("Modify an appointment");
                                     break;
                                 }
                                 case 4 : {
+                                    System.out.println("Cancel an appointment");
+
+                                    break;
+                                }
+                                case 5 : {
                                     System.out.println("\nThank you for using our Medical Clinic System. Goodbye !\n");
                                     exit = true;
                                     break;
@@ -75,9 +81,11 @@ public class Main {
                     case 'D':{ // Doctor
                         System.out.println("What do you want to do ?");
                         System.out.println("\n1) Change my personal information");
-                        System.out.println("2) Add an appointment");
-                        System.out.println("3) Add a treatment");
-                        System.out.println("4) Exit");
+                        System.out.println("2) Add a treatment");
+                        System.out.println("3) Modify a treatment");
+                        System.out.println("4) Delete a treatment");
+                        System.out.println("5) List all my treatments");
+                        System.out.println("6) Exit");
                         System.out.print("\nYour choice: ");
                         numMenu = input.nextInt();
                         switch(numMenu){
@@ -95,6 +103,12 @@ public class Main {
                                 break;
                             }
                             case 4 : {
+                                break;
+                            }
+                            case 5 : {
+                                break;
+                            }
+                            case 6 : {
                                 System.out.println("\nThank you for using our Medical Clinic System. Goodbye !\n");
                                 exit = true;
                                 break;
@@ -104,31 +118,42 @@ public class Main {
                     }
                     case 'R':{ // Receptionist
                         System.out.println("What do you want to do ?");
-                        System.out.println("1) List all doctors");
-                        System.out.println("2) List all patients");
-                        System.out.println("3) Add an Appointment");
-                        System.out.println("4) Exit");
+                        System.out.println("\n1) Change my personal information");
+                        System.out.println("2) List all doctors");
+                        System.out.println("3) List all patients");
+                        System.out.println("4) Add an Appointment");
+                        System.out.println("5) Cancel an appointment");
+                        System.out.println("6) Modify an appointment");
+                        System.out.println("7) Exit");
                         numMenu = input.nextInt();
                         switch (numMenu) {
-                            case 1 : {        
+                            case 2 : {        
                                 // Print out the list of Doctor objects
                                 System.out.println("Here are all the doctors :");
                                 
                                 System.out.println("****************************************************");
                                 break;
                             }
-                            case 2 : {        
+                            case 3 : {        
                                 // Print out the list of Patient objects
                                 System.out.println("Here are all the patients :");
 
                                 System.out.println("****************************************************");
                                 break;
                             }
-                            case 3 : {
+                            case 4 : {
                                 Appointment.addAppointment();
                                 break;
                             }
-                            case 4 : {
+                            case 5 : {
+                                System.out.println("Cancel an appointment");
+                                break;
+                            }
+                            case 6 : {
+                                System.out.println("Modify an appointment");
+                                break;
+                            }
+                            case 7 : {
                                 System.out.println("\nThank you for using our Medical Clinic System. Goodbye !\n");
                                 exit = true;
                                 break;
