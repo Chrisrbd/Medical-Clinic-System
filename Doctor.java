@@ -56,6 +56,7 @@ public class Doctor extends Person {
     public void setSpecialty(String specialty) {
       this.specialty = specialty;
     }
+
   
     @Override
     public String toString() {

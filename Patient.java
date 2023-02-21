@@ -56,7 +56,8 @@ public class Patient extends Person {
     public void setInsuranceCompany(String insuranceCompany) {
       this.insuranceCompany = insuranceCompany;
     }
-  
+    
+
     @Override
     public String toString() {
         return  

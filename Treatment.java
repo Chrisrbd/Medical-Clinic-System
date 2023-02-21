@@ -1,52 +1,60 @@
-import java.util.Date;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Treatment {
-    private Date date;
-    private Date startTime;
-    private Date endTime;
-    private Doctor doctor;
-    private Patient patient;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String doctor;
+    private String patient;
 
-    public Treatment(Date date, Date startTime, Date endTime, Doctor doctor, Patient patient) {
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public Treatment(String patient, String doctor, LocalDate startDate, LocalDate endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.doctor = doctor;
         this.patient = patient;
     }
 
-    //getters
-    public Date getDate() {
-        return date;
+    public static void addTreatment() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Complete the following information to add a treatment");
+        System.out.println("Enter the patient name: ");
+        String patient = input.nextLine();
+        System.out.println("Enter the doctor name ");
+        String doctor = input.nextLine();
+        System.out.println("Enter the start date of the treatment (yyyy-mm-dd): ");
+        LocalDate startDate = LocalDate.parse(input.next());
+        System.out.println("Enter the end date of the treatment (yyyy-mm-dd): ");
+        LocalDate endDate = LocalDate.parse(input.next());
+        Treatment newTreatment = new Treatment(patient, doctor, startDate, endDate);
+        System.out.println("Treatment added successfully: ");
+        System.out.println(newTreatment);
+        writeTreatment(newTreatment);
     }
-    public Date getStartTime() {
-        return startTime;
+
+    public static void writeTreatment(Treatment treatment) {
+        String treatmentString = treatment.toString();
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Treatments.txt", true));
+            writer.write(treatmentString);
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            System.err.println("Error when writing to the treatment : " + e.getMessage());
+        }
     }
-    public Date getEndTime() {
-        return endTime;
+
+    @Override
+    public String toString() {
+        return "Treatment [doctor=" + doctor + ", endDate=" + endDate + ", patient=" + patient + ", startDate="
+                + startDate + "]";
     }
-    public Doctor getDoctor() {
-        return doctor;
-    }
-    public Patient getPatient() {
-        return patient;
-    }
-    
-    //setters
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
+
+
+
+
+
 }
  
