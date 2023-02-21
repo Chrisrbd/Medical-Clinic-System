@@ -1,6 +1,14 @@
+
 id: D1
-name: arthur
-dateOfBirth: 2002-10-30
-address: 4 street oui
-phoneNumber: 555-555-5555
-specialty: cardiology
+name: ga
+dateOfBirth: 3000-12-30
+address: 12 rue j
+phoneNumber: 111-111-1111
+specialty: cardio
+
+id: D2
+name: q
+dateOfBirth: 2000-10-02
+address: 12 rue j
+phoneNumber: 333-333-3333
+specialty: ah

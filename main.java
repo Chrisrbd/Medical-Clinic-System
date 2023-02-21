@@ -13,7 +13,7 @@ public class Main {
             try{
                 System.out.println("\nWelcome to our Medical Clinic !");
                 System.out.println("\n1) Sign up");
-                System.out.println("2) Sign in");
+                System.out.println("2) Log in");
                 System.out.println("3) Exit");
                 System.out.print("\nYour choice: ");
                 numMenu = input.nextInt();
@@ -35,7 +35,7 @@ public class Main {
 
                 IDVerification.IDVerify();
                 char firstLetterOfID = IDVerification.getFirstLetterOfIDSearch();
-                /* 
+                
                 switch(firstLetterOfID){
                     case 'P':{ // Patient
                         System.out.println("What do you want to do ?");
@@ -119,7 +119,7 @@ public class Main {
                         break;
                     }                
                 }
-                */
+                
             
             }
             else if (numMenu == 3){ // Exit

@@ -18,10 +18,33 @@ public class Registration {
 
             System.out.print("Date of birth (yyyy-mm-dd): ");
             dateOfBirth = input.nextLine();
-            while (!dateOfBirth.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            while (!dateOfBirth.matches("\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[01])")) {
                 System.out.println("Invalid date. Please enter a date in the correct format.");
                 System.out.print("Date of birth (yyyy-mm-dd): ");
                 dateOfBirth = input.nextLine();
+            }
+
+            //verification leap year for february
+            String[] parts = dateOfBirth.split("-");
+            int year = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int day = Integer.parseInt(parts[2]);
+            if (month == 2 && day > 29) {
+                boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+                while (!isLeapYear || (isLeapYear && day > 29)) {
+                    if (isLeapYear) {
+                        System.out.println("Invalid date. February can have at most 29 days in " + year + ".");
+                    } else {
+                        System.out.println("Invalid date. February can have at most 28 days in " + year + ".");
+                    }
+                    System.out.print("Date of birth (yyyy-mm-dd): ");
+                    dateOfBirth = input.nextLine();
+                    parts = dateOfBirth.split("-");
+                    year = Integer.parseInt(parts[0]);
+                    month = Integer.parseInt(parts[1]);
+                    day = Integer.parseInt(parts[2]);
+                    isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+                }
             }
 
             System.out.print("Address (number + street name): ");

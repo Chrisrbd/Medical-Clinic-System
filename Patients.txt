@@ -1,20 +1,7 @@
-id: P1 
-name: chris
-dateOfBirth: 2001-10-04
-address: 123 rue a
-phoneNumber: 555-555-5555
-insurance company: aviva
 
 id: P1
-name: thylane
-dateOfBirth: 2005-01-23
-address: 9 rue a
-phoneNumber: 444-444-4444
+name: a
+dateOfBirth: 2002-10-02
+address: 12 rue non
+phoneNumber: 111-111-1111
 insurance company: oui
-
-id: P1
-name: Alex
-dateOfBirth: 1231-12-12
-address: 3 rue A
-phoneNumber: 222-222-2222
-insurance company: k

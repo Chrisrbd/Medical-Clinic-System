@@ -1,0 +1,12 @@
+
+id: R1
+name: f
+dateOfBirth: 3333-11-02
+address: 122 rue b
+phoneNumber: 444-444-4444
+
+id: R2
+name: E
+dateOfBirth: 3333-11-30
+address: 1244 rue oui
+phoneNumber: 666-666-6666

@@ -11,7 +11,6 @@ public class IDVerification {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your ID: ");
         String idSearch = input.next();
-        input.close(); // close the scanner
         firstLetterOfIDSearch = idSearch.charAt(0);
         String fileName = "";
         switch (firstLetterOfIDSearch) {
@@ -44,6 +43,9 @@ public class IDVerification {
                     System.out.println("\nSuccessful authentication!");
                     System.out.println("Welcome " + userName + "!\n");
                     br.close();
+                    System.out.println("\nPress enter to continue...");
+                    input.nextLine(); // clear the scanner
+                    input.nextLine(); // wait for the user to press enter
                     break;                
                 }
             }

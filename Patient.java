@@ -24,20 +24,20 @@ public class Patient extends Person {
       String lastLine = "";
       String line = reader.readLine();
       while (line != null) {
-          if (line.startsWith("id:")) {
-              lastLine = line.substring(4); // remove "id: "
-          }
-          line = reader.readLine();
-      }
-      reader.close();
+        if (line.startsWith("id:")) {
+            lastLine = line;
+        }
+        line = reader.readLine();
+    }
+    reader.close();
 
-      if (!lastLine.equals("")) {
-          String[] tokens = lastLine.split("\\s+");
-          if (tokens.length >= 2) {
-              String lastId = tokens[1];
-              counterId = Integer.parseInt(lastId.substring(1));
-          }
-      }
+    if (!lastLine.equals("")) {
+        String[] tokens = lastLine.split("\\s+");
+        if (tokens.length >= 2) {
+            String lastId = tokens[1];
+            counterId = Integer.parseInt(lastId.substring(1));
+        }
+    }
   }
 
     public String getID() {
@@ -59,7 +59,7 @@ public class Patient extends Person {
     @Override
     public String toString() {
         return  
-        "id: " + getID() +
+        "\nid: " + id +
         "\nname: " + getName() +
         "\ndateOfBirth: " + getDateOfBirth() +
         "\naddress: " + getAddress() +
