@@ -24,10 +24,22 @@ public class Treatment {
         String patient = input.nextLine();
         System.out.println("Enter the doctor name ");
         String doctor = input.nextLine();
-        System.out.println("Enter the start date of the treatment (yyyy-mm-dd): ");
-        LocalDate startDate = LocalDate.parse(input.next());
-        System.out.println("Enter the end date of the treatment (yyyy-mm-dd): ");
-        LocalDate endDate = LocalDate.parse(input.next());
+        System.out.print("Enter the date of the appointment (yyyy-mm-dd): ");
+        String newDate = input.next();
+        while (!newDate.matches("\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[01])")) {
+            System.out.println("Invalid date. Please enter a date in the correct format.");
+            System.out.print("Enter the date of the appointment (yyyy-mm-dd): ");
+            newDate = input.next();
+        }
+        LocalDate startDate = LocalDate.parse(newDate);
+        System.out.print("Enter the date of the appointment (yyyy-mm-dd): ");
+        newDate = input.next();
+        while (!newDate.matches("\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[01])")) {
+            System.out.println("Invalid date. Please enter a date in the correct format.");
+            System.out.print("Enter the date of the appointment (yyyy-mm-dd): ");
+            newDate = input.next();
+        }
+        LocalDate endDate = LocalDate.parse(newDate);
         Treatment newTreatment = new Treatment(patient, doctor, startDate, endDate);
         System.out.println("Treatment added successfully: ");
         System.out.println(newTreatment);
@@ -44,6 +56,15 @@ public class Treatment {
         } catch (IOException e) {
             System.err.println("Error when writing to the treatment : " + e.getMessage());
         }
+    }
+
+    public static void deleteTreatment(Treatment treatment) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the patient name: ");
+        String patient = input.nextLine();
+        System.out.println("Enter the doctor name ");
+        String doctor = input.nextLine();
+
     }
 
     @Override
