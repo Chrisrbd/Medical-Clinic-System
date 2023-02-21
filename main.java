@@ -1,11 +1,13 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
     
         
         //final part
+        String id =""; 
         int numMenu; 
         Scanner input = new Scanner(System.in);
         boolean exit = false;
@@ -34,35 +36,40 @@ public class Main {
             else if (numMenu == 2){ // Sign in                
 
                 IDVerification.IDVerify();
+                id = IDVerification.getId(); // get the id of the user who is logged in
                 char firstLetterOfID = IDVerification.getFirstLetterOfIDSearch();
                 
                 switch(firstLetterOfID){
                     case 'P':{ // Patient
-                        System.out.println("What do you want to do ?");
-                        System.out.println("\n1) Change my personal information");
-                        System.out.println("2) Make an appointment with a doctor");
-                        System.out.println("3) Manage your appointment");
-                        System.out.println("4) Return to the main menu");
-                        System.out.print("\nYour choice: ");
-                        numMenu = input.nextInt();
-                        switch(numMenu){
-                            case 1 : {
-                                System.out.println("Change my personal information");
-                                break;
-                            }
-                            case 2 : {
-                                System.out.println("Make an appointment with a doctor");
-                                break;
-                            }
-                            case 3 : {
-                                System.out.println("Manage your appointment");
-                                break;
-                            }
-                            case 4 : {
-                                return;
+                        while(exit != true){
+                            System.out.println("What do you want to do ?");
+                            System.out.println("\n1) Change my personal information");
+                            System.out.println("2) Make an appointment with a doctor");
+                            System.out.println("3) Manage your appointment");
+                            System.out.println("4) Return to the main menu");
+                            System.out.print("\nYour choice: ");
+                            numMenu = input.nextInt();
+                            switch(numMenu){
+                                case 1 : {
+                                    System.out.println("Change my personal information\n");
+                                    Information.modifyInformation(id);
+                                    break;
+                                }
+                                case 2 : {
+                                    System.out.println("Make an appointment with a doctor");
+                                    break;
+                                }
+                                case 3 : {
+                                    System.out.println("Manage your appointment");
+                                    break;
+                                }
+                                case 4 : {
+                                    exit = true;
+                                }
                             }
                         }
-                        break;
+                        exit = false;
+                        return;
                     }
                     case 'D':{ // Doctor
                         System.out.println("What do you want to do ?");
@@ -75,6 +82,7 @@ public class Main {
                         switch(numMenu){
                             case 1 : {
                                 System.out.println("Change my personal information");
+                                
                                 break;
                             }
                             case 2 : {

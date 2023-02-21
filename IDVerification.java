@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class IDVerification {
 
+    private static String id;
     private static char firstLetterOfIDSearch;
 
     public static void IDVerify() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your ID: ");
-        String idSearch = input.next();
-        firstLetterOfIDSearch = idSearch.charAt(0);
+        id = input.next();
+        firstLetterOfIDSearch = id.charAt(0);
         String fileName = "";
         switch (firstLetterOfIDSearch) {
             case 'P': {
@@ -38,7 +39,7 @@ public class IDVerification {
             
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.contains(idSearch)) {
+                if (line.contains(id)) {
                     String userName = br.readLine().substring(6);
                     System.out.println("\nSuccessful authentication!");
                     System.out.println("Welcome " + userName + "!\n");
@@ -58,4 +59,9 @@ public class IDVerification {
     public static char getFirstLetterOfIDSearch() {
         return firstLetterOfIDSearch;
     }
+
+    public static String getId() {
+        return id;
+    }
+
 }
